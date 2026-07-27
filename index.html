@@ -3,225 +3,374 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coolen Technologies</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Coolen Technologies | AI Receptionist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #07121f;
+        color: white;
+        line-height: 1.6;
+      }
+
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(12px);
+        background: rgba(7, 18, 31, 0.75);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      nav {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 25px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #4fd1ff;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: 500;
+        transition: 0.25s;
+      }
+
+      nav a:hover {
+        color: #4fd1ff;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 20px 60px;
+        background: radial-gradient(circle at top, #12355b 0%, #07121f 65%);
+      }
+
+      .hero-content {
+        max-width: 850px;
+      }
+
+      .hero h1 {
+        font-size: 3.8rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 span {
+        color: #4fd1ff;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        color: #cfd8e3;
+        margin-bottom: 35px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 15px 28px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+      }
+
+      .primary {
+        background: #4fd1ff;
+        color: #07121f;
+      }
+
+      .primary:hover {
+        transform: translateY(-3px);
+      }
+
+      .secondary {
+        border: 2px solid #4fd1ff;
+        color: #4fd1ff;
+      }
+
+      .secondary:hover {
+        background: #4fd1ff;
+        color: #07121f;
+      }
+
+      section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 90px 25px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 2.4rem;
+        margin-bottom: 15px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #b6c2cf;
+        margin-bottom: 55px;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: #0d1d30;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 30px;
+      }
+
+      .card h3 {
+        margin-bottom: 15px;
+        color: #4fd1ff;
+      }
+
+      .pricing {
+        display: flex;
+        justify-content: center;
+      }
+
+      .price-box {
+        background: #0d1d30;
+        border: 2px solid #4fd1ff;
+        border-radius: 20px;
+        max-width: 420px;
+        width: 100%;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .price-box h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .setup {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #4fd1ff;
+      }
+
+      .month {
+        margin: 15px 0 30px;
+        font-size: 1.3rem;
+      }
+
+      .price-box ul {
+        list-style: none;
+        text-align: left;
+      }
+
+      .price-box li {
+        margin: 12px 0;
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .contact p {
+        margin: 12px 0;
+        font-size: 1.1rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 35px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: #9eb0c4;
+      }
+
+      @media (max-width: 700px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        nav {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        nav a {
+          margin: 0 10px;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- NAV -->
-    <!-- NAV -->
-    <nav class="nav">
-      <div class="logo">
-        <img src="Assets/Logo.png" alt="Coolen Technologies Logo" class="logo-img" />
-      </div>
+    <header>
+      <nav>
+        <div class="logo">Coolen Technologies</div>
 
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="founder.html">Founder</a>
-        <a href="holdings.html">Solutions</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
+        <div>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
 
-    <!-- HERO -->
-    <section
-      class="hero"
-      style="
-        --bg: #ffffff;
-        --text: #0b1220;
-        --muted: rgba(11, 18, 32, 0.6);
-        --nav-bg: rgba(255, 255, 255, 0.95);
-        --nav-border: rgba(11, 18, 32, 0.06);
-        --card-bg: #ffffff;
-        --card-border: rgba(11, 18, 32, 0.06);
-        --btn-primary-bg: #0b1220;
-        --btn-primary-color: #ffffff;
-        --link-color: rgba(11, 18, 32, 0.7);
-      "
-    >
+    <section class="hero">
       <div class="hero-content">
-        <h1 class="hero-title">AI Receptionists that save businesses time</h1>
-        <p class="hero-sub">
-          Coolen Technologies builds modern AI receptionists and automation that
-          handle calls, messages, booking, and customer intake—so your team
-          focuses on higher value work.
+        <h1>
+          Never Miss Another Customer Call with an <span>AI Receptionist</span>
+        </h1>
+
+        <p>
+          Your AI receptionist answers calls 24/7, books appointments, answers
+          customer questions, captures leads, and integrates with your existing
+          booking software so your business never misses an opportunity.
         </p>
 
-        <div class="hero-buttons">
-          <a href="holdings.html" class="btn primary">See AI Receptionists</a>
-          <a href="contact.html" class="btn secondary">Request Demo</a>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- FOUNDER -->
-    <section
-      class="section founder-section"
-      style="
-        --bg: #f3fbff;
-        --text: #071028;
-        --muted: rgba(7, 16, 40, 0.55);
-        --nav-bg: rgba(255, 255, 255, 0.92);
-        --nav-border: rgba(11, 18, 32, 0.04);
-        --card-bg: #ffffff;
-        --card-border: rgba(11, 18, 32, 0.03);
-        --btn-primary-bg: #0b1220;
-        --btn-primary-color: #ffffff;
-        --link-color: rgba(11, 18, 32, 0.7);
-      "
-    >
-      <div class="founder-grid">
-        <div class="founder-copy">
-          <h2 class="founder-title">Founder</h2>
-          <p>
-            Cooper Lenkey is a high school student who has already completed an
-            associate degree in Computer Science. He brings a rare combination
-            of academic discipline, technical ability, and professional maturity
-            to every project.
-          </p>
-          <p>
-            His work is built on credibility, professionalism, and a strong
-            commitment to delivering solutions that clients can trust.
-          </p>
-        </div>
-        <div class="founder-image-card" aria-label="Founder photo placeholder">
-          <span>Insert your photo here</span>
+        <div class="buttons">
+          <a class="btn primary" href="#contact">Schedule a Demo</a>
+          <a class="btn secondary" href="#pricing">View Pricing</a>
         </div>
       </div>
     </section>
 
-    <!-- VISION -->
-    <section
-      class="section dark"
-      style="
-        --bg: #0b0b0b;
-        --text: #ffffff;
-        --muted: rgba(255,255,255,0.72);
-        --nav-bg: rgba(11,11,11,0.95);
-        --nav-border: rgba(255,255,255,0.04);
-        --card-bg: #0b0b0b;
-        --card-border: rgba(255,255,255,0.06);
-        --btn-primary-bg: #ffffff;
-        --btn-primary-color: #0b0b0b;
-        --link-color: rgba(255,255,255,0.8);
-      "
-    >
-      <h2>Vision</h2>
-      <p>
-        Create dependable conversational AI that feels natural, protects time,
-        and scales small businesses—making intelligent reception available to
-        every team.
+    <section id="features">
+      <h2>Everything Your Business Needs</h2>
+
+      <p class="subtitle">
+        Designed for spas, salons, clinics, restaurants, and service businesses.
       </p>
+
+      <div class="features">
+        <div class="card">
+          <h3>24/7 Call Answering</h3>
+          <p>
+            Every customer call is answered instantly, even after hours or
+            during busy periods.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Appointment Booking</h3>
+          <p>
+            Connect your booking platform so customers can schedule, reschedule,
+            and cancel appointments automatically.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Website Knowledge</h3>
+          <p>
+            Your AI learns your services, pricing, FAQs, and company information
+            directly from your website.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Works With Your Apps</h3>
+          <p>
+            Integrates with CRMs, calendars, booking software, and thousands of
+            business applications.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Lead Capture</h3>
+          <p>
+            Collect names, phone numbers, emails, and customer requests even
+            when you're unavailable.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Professional Experience</h3>
+          <p>
+            Give every caller a fast, friendly, and consistent customer
+            experience without hiring additional staff.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- SERVICES -->
-    <section
-      class="section services"
-      style="
-        --bg: #ffffff;
-        --text: #0b1220;
-        --muted: rgba(11, 18, 32, 0.6);
-        --nav-bg: rgba(255, 255, 255, 0.95);
-        --nav-border: rgba(11, 18, 32, 0.06);
-        --card-bg: #ffffff;
-        --card-border: rgba(11, 18, 32, 0.06);
-        --btn-primary-bg: #0b1220;
-        --btn-primary-color: #ffffff;
-        --link-color: rgba(11, 18, 32, 0.7);
-      "
-    >
-      <h2>Services</h2>
+    <section id="pricing">
+      <h2>Simple Pricing</h2>
 
-      <div class="card-grid">
-        <div class="card service-card">
-          <div class="service-icon">🤖</div>
+      <p class="subtitle">No complicated contracts. One flat monthly price.</p>
+
+      <div class="pricing">
+        <div class="price-box">
           <h3>AI Receptionist</h3>
-          <p>
-            24/7 conversational receptionists that answer calls, qualify leads,
-            book appointments, and integrate with your calendar and CRM.
-          </p>
-          <a href="holdings.html">Learn More →</a>
-        </div>
 
-        <div class="card service-card">
-          <div class="service-icon">📈</div>
-          <h3>Google Business SEO Optimization</h3>
-          <p>
-            Optimize your Google Business profile, manage reviews, and improve
-            local visibility to increase discovery and conversions.
-          </p>
-          <a href="contact.html">Get Started →</a>
-        </div>
-      </div>
-    </section>
-    <!-- WHY COOLEN -->
-    <section class="section">
-      <h2>We make AI that saves time</h2>
-      <p>
-        Modern AI receptionists that answer calls, handle bookings, and triage
-        customers—reducing administrative hours and increasing conversion.
-      </p>
+          <div class="setup">$150</div>
 
-      <div class="card-grid">
-        <div class="card">
-          <h3>AI First</h3>
-          <p>
-            Conversational AI trained for natural, helpful interactions that
-            match your brand voice.
-          </p>
-        </div>
+          <p>One-Time Setup</p>
 
-        <div class="card">
-          <h3>Save Time</h3>
-          <p>
-            Automate repetitive touchpoints so staff spend time on high-value
-            work—not routine tasks.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Integrations</h3>
-          <p>
-            Plug into calendars, CRMs, and phone systems for end-to-end
-            automation.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta">
-      <h2>Ready to save time with AI?</h2>
-      <p>
-        Book a demo to see how our AI receptionists can work for your business.
-      </p>
-      <div class="hero-buttons">
-        <a href="contact.html" class="btn primary">Book a Demo</a>
-        <a href="holdings.html" class="btn secondary">Solutions</a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p>© 2026 Coolen Technologies. All rights reserved.</p>
-    </footer>
-        <div class="section-content">
-          <h2>Vision</h2>
-          <p>Create dependable conversational AI that feels natural, protects time, and scales small businesses—making intelligent reception available to every team.</p>
-          <div class="section-graphic">
-            <!-- Simple SVG grid/mesh for Vision -->
-            <svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <g opacity="0.12" stroke="#ffffff" stroke-width="1">
-                <path d="M10 20 L210 20" />
-                <path d="M10 40 L210 40" />
-                <path d="M10 60 L210 60" />
-                <path d="M10 80 L210 80" />
-                <path d="M10 100 L210 100" />
-              </g>
-              <circle cx="40" cy="30" r="6" fill="#ffffff" opacity="0.9" />
-              <circle cx="140" cy="70" r="8" fill="#ffffff" opacity="0.7" />
-            </svg>
+          <div class="month">
+            <strong>$300/month</strong>
           </div>
+
+          <ul>
+            <li>✔ AI answers every call</li>
+            <li>✔ Appointment scheduling</li>
+            <li>✔ Booking software integration</li>
+            <li>✔ Website & business knowledge</li>
+            <li>✔ Lead capture</li>
+            <li>✔ Ongoing support</li>
+          </ul>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+
+      <p>Ready to stop missing customer calls?</p>
+
+      <p><strong>Phone:</strong> (424) 603-1046</p>
+
+      <p><strong>Email:</strong> cooper@coolentech.com</p>
+
+      <a class="btn primary" href="tel:4246031046"> Call Now </a>
+    </section>
+
+    <footer>© 2026 Coolen Technologies. All Rights Reserved.</footer>
+  </body>
+</html>
